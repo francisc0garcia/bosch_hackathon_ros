@@ -1,0 +1,6 @@
+
+
+- start demo:
+
+cd ~/Desktop/Bosch.hackathon/code/ros_hackathon_ws
+source devel_isolated/setup.bash

@@ -1,0 +1,16 @@
+<launch>
+    <include file="$(find teleop_twist_joy)/launch/teleop.launch" />
+
+    <node name="custom_rqt_perspective" pkg="rqt_gui" type="rqt_gui"
+          args="--perspective-file  $(find bosch_hackathon_ros)/config/hackathon.perspective"/>
+
+    <node name="rviz" pkg="rviz" type="rviz"
+          args="-d $(find bosch_hackathon_ros)/config/hackathon.rviz"/>
+
+    <node pkg="rosaria" type="RosAria" name="interface_ros_aria">
+        <param name="port" type="string" value="localhost:8101" />
+    </node>
+
+    <include file="$(find bosch_hackathon_ros)/launch/driver_slam_gmapping.launch" />
+
+</launch>
